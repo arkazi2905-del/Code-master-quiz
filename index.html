@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeMaster Learning Platform</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<!-- AUTH SCREEN -->
+<div class="auth-container" id="authContainer">
+
+<div class="auth-box glass">
+
+<h2 id="authTitle">
+Login
+</h2>
+
+<div class="auth-tabs">
+
+<button id="loginTab"
+class="active-tab">
+Login
+</button>
+
+<button id="signupTab">
+Signup
+</button>
+
+</div>
+
+<input type="text"
+placeholder="Username"
+id="username"/>
+
+<input type="email"
+placeholder="Email"
+id="email"
+style="display:none;"/>
+
+<input type="password"
+placeholder="Password"
+id="password"/>
+
+<input type="password"
+placeholder="Confirm Password"
+id="confirmPassword"
+style="display:none;"/>
+
+<button id="authBtn">
+Login
+</button>
+
+<p id="authMessage"></p>
+
+</div>
+
+</div>
+
+<!-- WEBSITE -->
+<div id="mainWebsite" style="display:none;">
+
+<header>
+
+<nav class="navbar glass">
+
+<div class="logo">
+  CodeMaster
+</div>
+
+<div class="profile">
+
+<img src="images/avatar.png"
+class="avatar"/>
+
+<span id="userDisplay"></span>
+
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#quiz">Quiz</a></li>
+<li><a href="#tech">Tech</a></li>
+<li><a href="#quotes">Quotes</a></li>
+
+</ul>
+
+<div class="nav-right">
+
+<button id="darkBtn">
+<i class="fa-solid fa-moon"></i>
+</button>
+
+<div class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+Learn
+<span id="typing"></span>
+</h1>
+
+<p>
+Interactive Learning Platform with
+JavaScript Quiz & Animations
+</p>
+
+<a href="#quiz">
+
+<button class="hero-btn">
+Start Learning
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+
+<h2>Interactive Quiz</h2>
+
+<!-- START SCREEN -->
+<div class="start-screen glass"
+id="startScreen">
+
+<h2>
+Ready To Test Your Skills? 🚀
+</h2>
+
+<button class="start-btn"
+id="beginBtn">
+
+Start Quiz
+
+</button>
+
+</div>
+
+<!-- DIFFICULTY -->
+<div class="start-screen glass"
+id="difficultyScreen"
+style="display:none;">
+
+<h3>Select Difficulty</h3>
+
+<div class="difficulty-buttons">
+
+<button onclick="selectDifficulty('easy')">
+Easy
+</button>
+
+<button onclick="selectDifficulty('medium')">
+Medium
+</button>
+
+<button onclick="selectDifficulty('hard')">
+Hard
+</button>
+
+</div>
+
+</div>
+
+<!-- CATEGORY -->
+<div class="start-screen glass"
+id="categoryScreen"
+style="display:none;">
+
+<h3>Select Category</h3>
+
+<div class="category-buttons">
+
+<button onclick="startQuiz('html')">
+HTML
+</button>
+
+<button onclick="startQuiz('css')">
+CSS
+</button>
+
+<button onclick="startQuiz('javascript')">
+JavaScript
+</button>
+
+<button onclick="startQuiz('gk')">
+General Knowledge
+</button>
+
+</div>
+
+</div>
+
+<!-- QUIZ BOX -->
+<div class="quiz-box glass"
+id="quizBox">
+
+<div class="progress-container">
+
+<div class="progress-bar"
+id="progressBar"></div>
+
+</div>
+
+<div class="quiz-header">
+
+<div class="timer">
+⏳ Time:
+<span id="timer">15</span>s
+</div>
+
+<div class="question-count">
+Question:
+<span id="questionCount"></span>
+</div>
+
+</div>
+
+<h3 id="question"></h3>
+
+<div class="options"
+id="options"></div>
+
+<div class="result-card glass"
+id="resultCard">
+
+<button id="restartQuizBtn"
+class="restart-btn">
+Play Again 🔄
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LEADERBOARD -->
+<section class="leaderboard-section">
+
+<h2>Leaderboard 🏆</h2>
+
+<div class="leaderboard glass"
+id="leaderboard"></div>
+
+</section>
+
+<!-- TECH -->
+<section class="tech-section"
+id="tech">
+
+<h2>Tech Showcase</h2>
+
+<div class="carousel">
+
+<button id="prev">
+<i class="fa-solid fa-angle-left"></i>
+</button>
+
+<div class="carousel-card glass">
+
+<img id="carouselImage"
+src="images/html.jpg"/>
+
+<h3 id="carouselTitle">
+HTML
+</h3>
+
+<p id="carouselText">
+HTML creates web page structure.
+</p>
+
+</div>
+
+<button id="next">
+<i class="fa-solid fa-angle-right"></i>
+</button>
+
+</div>
+
+</section>
+
+<!-- QUOTES -->
+<section class="quote-section"
+id="quotes">
+
+<h2>Programming Quotes 💻</h2>
+
+<div class="quote-box glass">
+
+<p id="quoteText">
+Click below to generate quote
+</p>
+
+<button id="quoteBtn">
+Generate Quote
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+Built using HTML, CSS & JavaScript
+</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
